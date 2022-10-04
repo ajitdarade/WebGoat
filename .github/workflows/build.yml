@@ -2,7 +2,7 @@ name: "Build"
 on:
   pull_request:
     paths-ignore:
-      - 'txt'
+      - '.txt'
       - '*.MD'
       - '*.md'
       - 'LICENSE'
