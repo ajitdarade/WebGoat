@@ -4,10 +4,10 @@ on:
   push:
 jobs:
   build:
-   runs-on: ubuntu-latest
-   steps:
-     - name: demo
-       run: |
-        echo "hello world"
-        pwd
-        free -h
+    runs-on: ubuntu-latest
+    steps:
+      - name: demo
+        run: |
+         echo "hello world"
+         pwd
+         free -h
