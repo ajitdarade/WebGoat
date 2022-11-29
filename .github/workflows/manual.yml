@@ -36,7 +36,7 @@ jobs:
     # GitHub Token to create issues in the repository
     #    token: # optional, default is ${{ github.token }}
     # Target URL
-        target: https://dotnetthoughts.net
+        target: http://demo.testfire.net
     # Relative path of the ZAP configuration file
   #      rules_file_name: # optional
     # The Docker file to be executed
