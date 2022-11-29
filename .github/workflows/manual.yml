@@ -1,0 +1,51 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send greeting
+      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: OWASP ZAP Full Scan
+  # You may pin to the exact commit or the version.
+  # uses: zaproxy/action-full-scan@6eade0f93b10fad8cfb4e63b979703a2cbd0cc98
+      uses: zaproxy/action-full-scan@v0.4.0
+      with:
+    # GitHub Token to create issues in the repository
+    #    token: # optional, default is ${{ github.token }}
+    # Target URL
+        target: http://uitestingplayground.com
+    # Relative path of the ZAP configuration file
+  #      rules_file_name: # optional
+    # The Docker file to be executed
+        docker_name: owasp/zap2docker-stable
+    # Additional command line options
+  #      cmd_options: # optional
+    # The title for the GitHub issue to be created
+   #     issue_title: # optional, default is ZAP Full Scan Report
+    # The action status will be set to fail if ZAP identifies any alerts during the full scan
+  #      fail_action: # optional
+    # Whether Github issues should be created or not
+  #      allow_issue_writing: # optional, default is true
