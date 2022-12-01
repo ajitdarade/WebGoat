@@ -32,4 +32,6 @@ jobs:
       uses: snyk/actions@0.3.0
       with:
     # Which Snyk command to run, defaults to test
-        command: test
+        command: |
+                 auth 0655ea4d-2e55-4697-b726-9c832e36004a
+                 test
