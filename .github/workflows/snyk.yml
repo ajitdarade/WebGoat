@@ -34,4 +34,4 @@ jobs:
     # Which Snyk command to run, defaults to test
         command: |
                  auth 0655ea4d-2e55-4697-b726-9c832e36004a
-                 test
+                 code test
