@@ -27,11 +27,9 @@ jobs:
         with:
     # Which Snyk command to run, defaults to test
          command: code test
+         args:
+           -o results.html
          # Additional arguments to pass to Snyk
         #args: # optional
     # Output a snyk.json file with results if running the test command
     #json: # optional
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-         sarif_file: snyk.sarif
