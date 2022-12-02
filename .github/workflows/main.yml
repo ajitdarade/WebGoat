@@ -26,9 +26,8 @@ jobs:
         uses: snyk/actions@0.3.0
         with:
     # Which Snyk command to run, defaults to test
-         command: code test --report --json
-         continue-on-error: true
-    # Additional arguments to pass to Snyk
+         command: code test --report
+         # Additional arguments to pass to Snyk
         #args: # optional
     # Output a snyk.json file with results if running the test command
     #json: # optional
