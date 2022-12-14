@@ -15,5 +15,5 @@ steps:
 
 - script: |
     docker pull owasp/zap2docker-stable
-    docker run -t owasp/zap2docker-stable zap-baseline.py -t http://demo.testfire.net -r report
+    docker run -t owasp/zap2docker-stable zap-baseline.py -t http://demo.testfire.net -r report_html
   displayName: 'Run a multi-line script'
