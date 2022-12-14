@@ -20,7 +20,7 @@ steps:
 
   inputs:
 
-    PathtoPublish: $(System.DefaultWorkingDirectory)/report/baseline-scan-report.html
+    PathtoPublish: $(System.DefaultWorkingDirectory)/report/baseline-scan-report.html --auto
 
     ArtifactName: 'Report'
 
