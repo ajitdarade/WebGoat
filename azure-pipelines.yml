@@ -13,8 +13,7 @@ steps:
 
 - script: |
     docker pull owasp/zap2docker-stable
-    docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t https://example.com/ -r full-scan-report.html
-
+    docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t https://example.com/ -r full-scan-report.html
      true
   displayName: 'owasp zap'
 
