@@ -22,7 +22,7 @@ steps:
 
   inputs:
 
-    PathtoPublish: $(System.DefaultWorkingDirectory)/report/scan-report.html
+    PathtoPublish: $(System.DefaultWorkingDirectory)/report/full-scan-report.html
 
     ArtifactName: 'Report'
 
