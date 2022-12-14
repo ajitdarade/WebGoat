@@ -13,5 +13,15 @@ steps:
 
 - script: |
     docker pull owasp/zap2docker-stable
-    docker run -v "$(pwd)":/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t https://www.example.com -r testreport.html
+    docker run -v "$(pwd)":/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t https://www.example.com
   displayName: 'owasp zap'
+
+- task: PublishBuildArtifacts@1
+
+  inputs:
+
+    PathtoPublish: $(System.DefaultWorkingDirectory)/report/baseline-scan-report.html
+
+    ArtifactName: 'Report'
+
+    publishLocation: 'Container'
