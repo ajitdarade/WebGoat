@@ -13,6 +13,8 @@ steps:
 
 - script: |
     docker pull owasp/zap2docker-stable
+    mkdir -p report
+    chmod 777 report
     docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://demo.testfire.net -r baseline-report.html
 
   displayName: 'owasp zap'
