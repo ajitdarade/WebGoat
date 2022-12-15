@@ -23,7 +23,7 @@ jobs:
     - name: Snyk
       uses: snyk/actions@0.3.0
       with:
-        command: auth 973ff940-4eb2-4c72-8a46-00fa3a962a69
+        command: auth 0655ea4d-2e55-4697-b726-9c832e36004a
     - name: Snyk test
       uses: snyk/actions@0.3.0
       with:
