@@ -21,4 +21,4 @@ jobs:
     - name: Snyk test
       uses: snyk/actions@0.3.0
       with:
-        command: code test
+        command: code test $(pwd)
