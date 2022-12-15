@@ -29,6 +29,6 @@ steps:
               true
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/'
     ArtifactName: 'scan-report'
     publishLocation: 'Container'
