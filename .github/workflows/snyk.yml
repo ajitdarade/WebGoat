@@ -11,9 +11,15 @@ on:
         default: 'World'
         required: true
 jobs:
-  greet:
+  snyk-run:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2.6.0
+      with:
+    # Repository name with owner. For example, actions/checkout
+        repository: ${{ github.WebGoat }}
+
     - name: Snyk
       uses: snyk/actions@0.3.0
       with:
