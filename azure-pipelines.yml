@@ -12,15 +12,14 @@ pool:
 steps:
 
 - script: |
-    docker pull owasp/zap2docker-stable
     mkdir -p report
     chmod 777 report
-    docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://demo.testfire.net -r baseline-report.html -s '/src' -o '/report' --format "HTML"
+    docker run --rm -v $(pwd)/report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t https://example.com -r baseline-scan-report.html -s '/src' -o '/report' --format "HTML"
 
   displayName: 'owasp zap'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: $(System.DefaultWorkingDirectory)/report
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
     ArtifactName: 'Report'
     publishLocation: 'Container'
