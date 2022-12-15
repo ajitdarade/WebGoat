@@ -13,12 +13,12 @@ steps:
 
 - script: |
     docker pull owasp/zap2docker-stable
-    docker run --user zap -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t http://demo.testfire.net -r full-scan-report.html
+    docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t http://demo.testfire.net -r full-scan-report.html
 
   displayName: 'owasp zap'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: $(System.DefaultWorkingDirectory)/report/full-scan-report.html
+    PathtoPublish: $(System.DefaultWorkingDirectory)
     ArtifactName: 'Report'
     publishLocation: 'Container'
