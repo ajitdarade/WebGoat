@@ -4,7 +4,7 @@
 pool:
   vmImage: ubuntu-latest
 variables:
-- group: Semgrep app token group
+- group: New variable group 27-Dec
 
 steps: 
 
