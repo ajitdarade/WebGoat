@@ -4,7 +4,7 @@
 pool:
   vmImage: ubuntu-latest
 variables:
-- group: New variable group 27-Dec
+- group: New_variable_group_27-Dec
 
 steps: 
 
