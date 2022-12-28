@@ -11,7 +11,6 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install semgrep
-    semgrep login $(SEMGREP_APP_TOKEN)
     semgrep ci
   env: 
     SEMGREP_PR_ID: $(System.PullRequest.PullRequestNumber)
