@@ -1,16 +1,15 @@
-# trigger:
-#  - master
+trigger:
+- master
 
 pool:
   vmImage: ubuntu-latest
 variables:
 - group: Semgrep app token group
 
-steps: 
-
+steps:
 - script: |
     python -m pip install --upgrade pip
     pip install semgrep
     semgrep ci
-  env: 
+  env:
     SEMGREP_PR_ID: $(System.PullRequest.PullRequestNumber)
