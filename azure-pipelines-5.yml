@@ -19,3 +19,4 @@ steps:
     targetPath: '$(System.DefaultWorkingDirectory)/'
     artifactType: 'pipeline'
     artifactName: 'scan-results'
+
