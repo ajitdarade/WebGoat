@@ -16,6 +16,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'semgrep.sarif'
+    targetPath: './semgrep.sarif'
     artifactType: 'pipeline'
     artifactName: 'scan-results'
