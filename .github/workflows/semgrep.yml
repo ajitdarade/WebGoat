@@ -35,7 +35,7 @@ jobs:
       - uses: returntocorp/semgrep-action@fcd5ab7459e8d91cb1777481980d1b18b4fc6735
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
-          generateSarif: "1"
+          generateSarif: "semgrep.sarif"
 
       - name: Upload SARIF file for GitHub Advanced Security Dashboard
         uses: github/codeql-action/upload-sarif@v2
